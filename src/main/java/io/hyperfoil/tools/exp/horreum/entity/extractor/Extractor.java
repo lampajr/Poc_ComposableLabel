@@ -1,13 +1,18 @@
 package io.hyperfoil.tools.exp.horreum.entity.extractor;
 
-import io.hyperfoil.tools.exp.horreum.FauxExtractor;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import io.hyperfoil.tools.exp.horreum.entity.Label;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
-import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Base class for all extractors to represent
